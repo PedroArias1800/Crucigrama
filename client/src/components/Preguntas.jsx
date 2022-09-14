@@ -8,12 +8,11 @@ function Preguntas() {
 
   useEffect(() => {
     obtenerPreguntas();
-    console.log(resp)
   }, []);
 
   return (
-    <div className="d-block col col-4">
-        <div className="overflow-auto fs-5" style={{height: '420px', 'text-align': 'justify', 'padding-right': '2%'}}>
+    <div className="d-block col col-5">
+        <div className="overflow-auto fs-5" style={{height: '505.5px', 'textAlign': 'justify', 'paddingRight': '2%'}}>
         {
             resp.map(respuesta => (
             <p key={respuesta.id_pregunta}>{respuesta.id_pregunta}. {respuesta.pregunta}</p>))

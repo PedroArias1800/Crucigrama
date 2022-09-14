@@ -1,11 +1,10 @@
 import React from 'react'
-import CuadroCrucigrama from '../components/CuadroCrucigrama'
+import CuadroCrucigrama from '../components/CuadroCrucigrama.jsx'
 
 function Index() {
   return (
-    <div className='cuerpo text-center text-light py-4'>
-      <h2>Crucigrama sobre la Calidad de Software</h2>
-      <CuadroCrucigrama />
+    <div className='cuerpo text-center text-light'>
+      <CuadroCrucigrama num={0}/>
     </div>
   )
 }

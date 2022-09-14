@@ -1,16 +1,29 @@
-import React from 'react'
-import Preguntas from './Preguntas'
+import React, { Component } from 'react'
+import Rows from './Rows.jsx';
+import Preguntas from './Preguntas.jsx'
 
-function CuadroCrucigrama() {
+export class CuadroCrucigrama extends Component {
 
-  return (
-    <div className='d-flex justify-content-center mx-auto px-3 py-3 row'>
-        <div className='col col-8'>
+  cargarEstructura=(() => {
+    let num = this.props.num;
+    const rows = [];
 
-        </div>
+    for (num; num <= 25; num++) {
+      rows.push(<Rows key={num}/>);
+    }
+
+    return  <div className='col col-7 center crossword rounded bg-dark d-block h-25' id="crossword">{rows}</div>
+
+  })
+
+  render() {
+    return (
+      <div className='d-flex justify-content-center mx-auto px-3 py-3 row'>
+        {this.cargarEstructura()}
         <Preguntas />
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default CuadroCrucigrama
